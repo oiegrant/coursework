@@ -1,0 +1,46 @@
+Using the provided training, validation, and test datasets, write a Python
+script to calculate the maximum likelihood estimation on the training set. Consider a
+prior function defined with respect to sigma as
+P(C1|g) = 1 - e^(-g); g > 0 and P(C2) = 1- P(C1). 
+
+Using the learned Bernoulli distributions and the given prior
+function, classify the samples in the validation set using your 
+classication rules for g = 0:00001; 0:0001; 0:001; 0:01; 0:1; 1; 2; 3; 4; 5; 6. Finally, choose the best prior (the
+one that gives the lowest error rate on the validation set) and use it to classify the
+samples in the test set.
+
+Print to the Python console (either in terminal or PyCharm)
+a table of error rate of each prior on the validation set and the error rate using the
+best prior on the test set. (Hint: if some Bernoulli probabilities are 0, you can replace
+them with a small probability such as 10􀀀10 to avoid the numerical problem.)
+Instructions
+
+P (x) = px (1 – p )^ (1 – x)
+
+g is the assumed probability
+Liklihood of g given provided data set
+--> MLE is the most likely g given dataset
+
+
+MLE of bernoulli, p = mean = sum(x) / N
+
+Posterior = (prior * likelihood) / evidence
+	prior = provided
+	liklihood = bernoulli
+
+
+Training function in Bayes learning.py: Bayes Learning(training data , val-
+idation data). The function returns the outputs (p1: learned Bernoulli pa-
+rameters of the first class, p2: learned Bernoulli parameters of the second
+class, pc1: best prior of the rst class, pc2: best prior of the second class). It
+must also print to the terminal (sprintf) a table of error rates of all priors.
+ Test function in Bayes testing.py: Bayes Testing(test data, p1: the learned
+Bernoulli parameter of the rst class, p2: the learned Bernoulli paramter of
+the second class, pc1: the learned prior of the rst class, pc2: the learned
+prior of the second class). The function must print to the Python console
+(either in terminal or PyCharm) the error rate on the test dataset.
+ main script main script.py: the script loads the data and call the training
+and test functions to generate the results.
+{ Error rate: Error rate is the percentage of wrongly classied data points divided
+by the total number of classied data points.
+

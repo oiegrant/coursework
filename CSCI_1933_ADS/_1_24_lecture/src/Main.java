@@ -11,6 +11,12 @@ public class Main {
         imagPartResult = imagParta+imagPartb;
         System.out.println(realPartResult + "+" + imagPartResult);
 
+        int n =1;
+
+        switch(n){
+            case 1:{System.out.println('h');}
+        }
+
 
     }
 }
